@@ -37,48 +37,28 @@ def read_json(file_path, word_max_len=6, top_words_amt=10):
                 #print(k)
                 words_.append(k)
         j += 1
-    # print(words_)
-    # print(len(words_))
+    #print(words_)
+    #print(len(words_))
     uniq_words = sorted(set(words_))
-    # print(uniq_words)
-    # print(len(uniq_words))
+    print(uniq_words)
+    print(type(uniq_words), len(uniq_words))
 
     #Формируем пустой словарь уникальных слов
     for uniq_words in words_:
         dict_words.setdefault(uniq_words,1)
     #print(dict_words)
-
+    print(words_.count("ноября"))
     #Считаем кол-во уникальных слов в новостях
-    for n in words_:
-        print(n)
-        for uniq_ in uniq_words:
-            #print(uniq_)
-            if uniq_ == n:
-                count += 1
-                print(count)
-        #print(dict_words.keys())
-        #print(dict_words.keys(), dict_words[uniq_words])
-        if dict_words[uniq_words] in words_:
-            #print(dict_words[uniq_words])
-            pass
 
-    #         dic[word] = dic[word] + 1
-    #     else:
-    #         dic[word] = 1
-    # dic
-
-    #x = enumerate(words_)
-    # for x, word in enumerate(words_):
-    #     print(x, word)
-
-    count = 0
-    for i in uniq_words:
-        #print(type(i))
-        if i in words_:
-            #print (f'слово "{i}" есть в новостях')
-            pass
-    #     print(words_str)
-    # print(len(words_str), type(words_str))
+    v = 0
+    l = len(uniq_words)
+    print(type(l))
+    while v < l:
+    #for z, n in enumerate(uniq_words):
+        #print(z, n)
+        #print(v)
+        v += 1
+        #pass
 
     return
 
