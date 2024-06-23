@@ -11,8 +11,6 @@ def read_json(file_path, word_max_len=6, top_words_amt=10):
     # Ваш алгоритм
 
     words_in_news = []
-    # news_list = {}
-    count = 0
     with open('newsafr.json', 'r', encoding='utf-8') as f:
         json_data = json.load(f)
         # pprint(json_data.values())
@@ -22,9 +20,9 @@ def read_json(file_path, word_max_len=6, top_words_amt=10):
         words_in_news.append(news_list[i]['description'].split())
         # print(type(words_in_news))
         # print(len(words_in_news))
-    # print(len(words_in_news))
+    #print(words_in_news)
 
-    # Формируем список слов и словарь уникального списка слов
+    # Формируем список общего количества слов
     words_ = []
     dict_words = {}
     j = 0
@@ -38,26 +36,27 @@ def read_json(file_path, word_max_len=6, top_words_amt=10):
                 words_.append(k)
         j += 1
     # print(words_)
-    # print(len(words_))
+    #print(len(words_))
     uniq_words = sorted(set(words_))
-    # print(uniq_words)
-    # print(type(uniq_words), len(uniq_words))
+    print(uniq_words.count('туризма'))
+    print(type(uniq_words), len(uniq_words))
 
-    for z, n in enumerate(uniq_words):
+    #Формируем словарь слов и их количество
+    for n in uniq_words:
     # print(z, n)
         #print(z, n, words_.count(n))
         dict_words[words_.count(n)] = n
+        #dict_words[n] = words_.count(n)
+    #print(len(dict_words))
 
-    {k: v for k, v in sorted(dict_words.items(), key=lambda item: item[1])}
-    pprint(dict_words)
+    marklist = sorted(dict_words.items(), reverse=True)
+    #print(len(marklist))
+    # for v in len(marklist):
+    #     print(marklist[1])
+    # dict_sorted = dict(marklist)
+    print(marklist)
+    # print(dict_sorted.values())
 
-
-    # Формируем пустой словарь уникальных слов
-    # for uniq_words in words_:
-    #     dict_words.setdefault(uniq_words, 1)
-    # print(dict_words)
-    #print(words_.count("ноября"))
-    # Считаем кол-во уникальных слов в новостях
 
     return
 
