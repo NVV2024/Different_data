@@ -20,7 +20,7 @@ def read_json(file_path, word_max_len=6, top_words_amt=10):
         words_in_news.append(news_list[i]['description'].split())
         # print(type(words_in_news))
         # print(len(words_in_news))
-    #print(words_in_news)
+    print(words_in_news)
 
     # Формируем список общего количества слов
     words_ = []
@@ -42,19 +42,21 @@ def read_json(file_path, word_max_len=6, top_words_amt=10):
     print(type(uniq_words), len(uniq_words))
 
     #Формируем словарь слов и их количество
-    for n in uniq_words:
-    # print(z, n)
+    for z, n in enumerate(uniq_words):
+        #print(n)
         #print(z, n, words_.count(n))
-        dict_words[words_.count(n)] = n
-        #dict_words[n] = words_.count(n)
-    #print(len(dict_words))
+        #dict_words[words_.count(n)] = n
+        dict_words[n] = words_.count(n)
+        print(z, dict_words, len(dict_words))
+        #print(z, type(dict_words[words_.count(n)]))
+    print(len(dict_words))
 
     marklist = sorted(dict_words.items(), reverse=True)
     #print(len(marklist))
     # for v in len(marklist):
     #     print(marklist[1])
     # dict_sorted = dict(marklist)
-    print(marklist)
+    print(len(marklist))
     # print(dict_sorted.values())
 
 
