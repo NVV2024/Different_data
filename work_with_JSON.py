@@ -15,14 +15,15 @@ def read_json(file_path, word_max_len=6, top_words_amt=10):
         json_data = json.load(f)
     news_list = json_data['rss']['channel']['items']
 
-    for i in range(len(news_list)):
-        words_in_news.append(news_list[i]['description'].split())
+    # for i in range(len(news_list)):
+    #     words_in_news.append(news_list[i]['description'].split())
 
     # Формируем список общего количества слов
     words_ = []
     dict_words = {}
     j = 0
     while j < len(words_in_news):
+        words_in_news.append(news_list[j]['description'].split())
         for k in words_in_news[j]:
             # Слова, где больше 6 символов. Проверка условия word_max_len=6
             if len(k) > word_max_len:
