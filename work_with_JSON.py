@@ -30,7 +30,8 @@ def read_json(file_path, word_max_len=6, top_words_amt=10):
         j += 1
 
     #Формируем список уникальных слов
-    uniq_words = sorted(set(words_))
+    uniq_words = sorted(list(set(words_)), reverse=True)
+    #uniq_words.sort(reverse=True)
 
     #Формируем словарь слов и их количество
     for z, n in enumerate(uniq_words):
